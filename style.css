@@ -76,13 +76,40 @@ nav.sticky .menu a{
 nav.sticky .menu a:hover{
   color: #0E2431;
 }
-.navbar .media-icons a{
+.navbar .media-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar .media-icons a {
   color: #4070f4;
   font-size: 18px;
   margin: 0 6px;
+  display: flex;
+  transition: color 0.3s ease;
 }
-nav.sticky .media-icons a{
+
+.navbar .media-icons a:hover {
+  color: #1a1a1a;
+}
+
+nav.sticky .media-icons a {
   color: #FFF;
+}
+
+/* 🔁 Responsive for mobile screens */
+@media (max-width: 768px) {
+  .navbar .media-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .navbar .media-icons a {
+    font-size: 20px;
+    margin: 4px;
+  }
 }
 
 /* Side Navigation Menu Button CSS */
@@ -435,6 +462,7 @@ footer .text span a:hover{
   nav .navbar{
     width: 90%;
   }
+}
   nav .navbar .menu{
     position: fixed;
     left: -100%;
@@ -473,62 +501,66 @@ footer .text span a:hover{
   .home .text-three{
     font-size: 35px;
   }
-  .skills .skills-details{
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .skills-details .text{
-    width: 100%;
-    margin-bottom: 50px;
-  }
-  .skills-details .boxes{
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .services .boxes .box{
-    margin: 20px 0;
-    width: 100%;
-  }
-  .contact .text{
-    width: 100%;
-}
+.skills .skills-details {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-@media (max-width: 500px){
-  .home .text-two{
+.skills-details .text {
+  width: 100%;
+  margin-bottom: 20px;  /* 50px बाट घटाएर 20px गरियो */
+}
+
+.skills-details .boxes {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.services .boxes .box {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.contact .text {
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .home .text-two {
     font-size: 55px;
   }
-  .home .text-three{
+  .home .text-three {
     font-size: 33px;
   }
-  .skills-details .boxes .per{
+  .skills-details .boxes .per {
     font-size: 50px;
     color: #4070f4;
   }
 }
 
-*{
-      box-sizing: border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-      background: #fff;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  background: #fff;
+}
 
-    .video-section {
-      padding: 3rem 1rem;
-      background: #f0f4ff;
-      border-radius: 12px;
-      margin: 2rem auto;
-      max-width: 1200px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
+.video-section {
+  padding: 2rem 1rem;       /* padding कम गरेर माथिको खाली ठाउँ घटायो */
+  background: transparent;  /* सेतो पृष्ठभूमि हटाउन */
+  border-radius: 12px;
+  margin: 0 auto 2rem auto; /* माथि margin 0, तल 2rem */
+  max-width: 1200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
 
     .section-title {
       text-align: center;
