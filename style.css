@@ -579,85 +579,38 @@ footer .text span a:hover{
         font-size: 1.5rem;
       }
     }
-    *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-section{
+    /* Full-screen loader */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: #fefefe;
   display: flex;
-  height: 100vh;
-  width: 100%;
-  background: #000;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
 }
-    .loader{
-  height: 25px;
-  width: 25px;
-  position: relative;
-  animation: rotate 5s  infinite;
-}
-.ball{
-  position: absolute;
-  height: 25px;
-  width: 25px;
+
+/* Circular animation */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #e0e0e0;
+  border-top: 6px solid #007BFF; /* Match your primary theme color */
   border-radius: 50%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
 }
-.upper{
-  left: 0;
-  top: -22px;
-  background: #2da2ff;
-  animation: upper 1s linear infinite;
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-@keyframes upper {
-  50%{
-    top: 22px;
-  }
-  100%{
-    top: 22px;
-  }
-}
-.right{
-  right: -22px;
-  top: 0;
-  background: #ff337a;
-  animation: right 1s linear infinite;
-}
-@keyframes right {
-  50%{
-    right: 22px;
-  }
-  100%{
-    right: 22px;
-  }
-}
-.lower{
-  bottom: -22px;
-  left: 0;
-  background: #ffff00;
-  animation: lower 1s linear infinite;
-}
-@keyframes lower {
-  50%{
-    bottom: 22px;
-  }
-  100%{
-    bottom: 22px;
-  }
-}
-.left{
-  left: -22px;
-  top: 0;
-  background: #00ff00;
-  animation: left 1s linear infinite;
-}
-@keyframes left {
-  50%{
-    left: 22px;
-  }
-  100%{
-    left: 22px;
-  }
+
+/* Optional text style */
+#preloader p {
+  font-size: 1rem;
+  color: #333;
 }
