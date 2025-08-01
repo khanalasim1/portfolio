@@ -614,3 +614,12 @@ footer .text span a:hover{
   font-size: 1rem;
   color: #333;
 }
+#icon{
+  width:30px;
+  cursor: pointer;
+}
+nav ul{
+  flex: 1;
+  text-align: right;
+
+}
