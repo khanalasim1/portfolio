@@ -53,19 +53,47 @@ window.addEventListener("load", () => {
     }, 500); // ✅ Fixed: closed properly
   }
 });
-// Auto Slider
+// ===== GALLERY SLIDER =====
+
+const galleryContainer = document.querySelector(".gallery-container");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+
+nextBtn.addEventListener("click", () => {
+  galleryContainer.scrollBy({
+    left: 340,
+    behavior: "smooth"
+  });
+});
+
+prevBtn.addEventListener("click", () => {
+  galleryContainer.scrollBy({
+    left: -340,
+    behavior: "smooth"
+  });
+});
+
+// Auto Slide
+
 setInterval(() => {
 
-    if(imageList.scrollLeft >= maxScrollLeft){
-        imageList.scrollTo({
-            left: 0,
-            behavior: "smooth"
-        });
-    } else {
-        imageList.scrollBy({
-            left: 325,
-            behavior: "smooth"
-        });
-    }
+  if(
+    galleryContainer.scrollLeft + galleryContainer.clientWidth >=
+    galleryContainer.scrollWidth - 10
+  ){
 
-}, 3000);
+    galleryContainer.scrollTo({
+      left: 0,
+      behavior: "smooth"
+    });
+
+  }else{
+
+    galleryContainer.scrollBy({
+      left: 340,
+      behavior: "smooth"
+    });
+
+  }
+
+}, 3500);
