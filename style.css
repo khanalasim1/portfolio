@@ -887,3 +887,63 @@ footer .text span a:hover{
     border-color: transparent;
   }
 }
+/* ===== RESPONSIVE LOGO ===== */
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.logo a{
+  display: flex;
+  align-items: center;
+}
+
+.main-logo{
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+/* Sticky Navbar */
+
+nav.sticky .main-logo{
+  filter: brightness(0) invert(1);
+}
+
+/* Hover Effect */
+
+.logo a:hover .main-logo{
+  transform: scale(1.05);
+}
+
+/* ===== TABLET ===== */
+
+@media(max-width:992px){
+
+  .main-logo{
+    height: 50px;
+  }
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+  .main-logo{
+    height: 42px;
+  }
+
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media(max-width:480px){
+
+  .main-logo{
+    height: 36px;
+  }
+
+}
