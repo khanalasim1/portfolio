@@ -97,3 +97,35 @@ setInterval(() => {
   }
 
 }, 3500);
+// ===== IMAGE POPUP =====
+
+const galleryImages = document.querySelectorAll(".gallery-card img");
+const imagePopup = document.querySelector(".image-popup");
+const popupImg = document.querySelector(".popup-img");
+const closePopup = document.querySelector(".close-popup");
+
+galleryImages.forEach((image) => {
+
+  image.addEventListener("click", () => {
+
+    imagePopup.classList.add("show");
+
+    popupImg.src = image.src;
+
+  });
+
+});
+
+closePopup.addEventListener("click", () => {
+
+  imagePopup.classList.remove("show");
+
+});
+
+imagePopup.addEventListener("click", (e) => {
+
+  if(e.target !== popupImg){
+    imagePopup.classList.remove("show");
+  }
+
+});
