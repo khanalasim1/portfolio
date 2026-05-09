@@ -129,3 +129,88 @@ imagePopup.addEventListener("click", (e) => {
   }
 
 });
+// ===== TYPING ANIMATION =====
+
+const typingElement = document.querySelector(".typing");
+
+const words = [
+  "Website Designer",
+  "Web Developer",
+  "Programmer",
+  "Tech Creator",
+  "YouTuber"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect(){
+
+  const currentWord = words[wordIndex];
+
+  if(!isDeleting){
+
+    typingElement.textContent =
+      currentWord.substring(0, charIndex + 1);
+
+    charIndex++;
+
+    if(charIndex === currentWord.length){
+      isDeleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
+    }
+
+  }else{
+
+    typingElement.textContent =
+      currentWord.substring(0, charIndex - 1);
+
+    charIndex--;
+
+    if(charIndex === 0){
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+
+  }
+
+  setTimeout(typeEffect, isDeleting ? 60 : 120);
+
+}
+
+typeEffect();
+
+
+// ===== STATS COUNTER =====
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+  const updateCounter = () => {
+
+    const target = +counter.getAttribute("data-target");
+    const current = +counter.innerText;
+
+    const increment = target / 100;
+
+    if(current < target){
+
+      counter.innerText =
+        `${Math.ceil(current + increment)}`;
+
+      setTimeout(updateCounter, 30);
+
+    }else{
+
+      counter.innerText = target;
+
+    }
+
+  };
+
+  updateCounter();
+
+});
